@@ -4,3 +4,7 @@ div {
     margin:auto;
     text-align: center;
 }
+.white-box {
+    background-color: white;
+    color: black;    
+}
