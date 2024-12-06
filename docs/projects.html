@@ -61,11 +61,16 @@
           </nav>
               <div class="white-box">
                 <h1> Projects </h1>
-                <a href="project1.html"  class="grey-box">
+                <button id="navigateButton"> 
                   <h2>Project 1</h2>
-                  <b>Overview: In this project ....</b>
-                </a>
-                
+                  <b>Overview: In this project ....</b> 
+                </button>
+                <script>
+                    document.getElementById("navigateButton").onclick = function () {
+                        window.location.href = "project1.html";
+                    };
+                </script>
+                 
               </div>
         </main>
     </body>
