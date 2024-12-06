@@ -52,6 +52,14 @@
                 </div>
               </nav>
               <div class="white-box">
+                <button id="navigateButton" class="btn btn-outline-success" style="margin: 5px;"></button>
+                  Back to Project List
+                </button>
+                <script>
+                    document.getElementById("navigateButton").onclick = function () {
+                        window.location.href = "projects.html";
+                    };
+                </script>
                 <b>Overview:</b> Developing Sales Insights for a Consumer Goods Company Based out of India using SQL and Power BI.<br><br>
                 <b>Problem:</b> AltiQ Hardware is facing challenges in effectively tracking sales and obtaining 
                 key business insights. The company's Sales Director, Bob, currently relies on verbal communication with regional 
@@ -65,13 +73,11 @@
                 Bob has asked us to create a comprehensive dashboard that consolidates all relevant sales data, providing clear
                 visualizations for better decision-making. Additionally, Bob wants automated monthly email reminders to receive timely 
                 updates on business performance and insights. <br><br>
-                <b>Project Planning:</b>  Using an AIMS Grid we break up our project into 4 categories: Purpose, Stakeholder, End Result, 
-                and Success Criteria. <hr><br><b>Purpose:</b> section we have: To unlock sales insights that are not visible before sales
-                team for decision support and automate theme to reduced manual time spent in data gathering. <br><b>Stakeholders:</b> 
-                section we have: Sales Director, Marketing Team, Customer Service Team, Data Analytics Team, and IT. <br><b>End Result:</b>
-                an automated dashboard providing quick and latest sales insights in order to support data driven decision making. 
+               <b>Purpose:</b>To unlock sales insights that are not visible before sales team for decision support and automate theme to
+                reduced manual time spent in data gathering. 
                 <br><b>Success Criteria:</b>Dashboard(s) uncovering sales order insights with the latest data available to make accurate and informed
-                Adjustments. <br><br>
+                Adjustments.
+                <hr>
                 <b>STEPS:</b> <br> STEP 1: Link Power Bi to MySql Database. I did by running a data base cales Sales with 5 tables. These tables are called
                 customers, date, markets, products, and transitions. To link Power Bi to Mysql I just needed to sign in to my localhost using root and my password
                 <br>STEP 2: Data cleaning - to do this I transformed the data. I removed unnecessary values such as sale amount being <=0, removed any sales that 
