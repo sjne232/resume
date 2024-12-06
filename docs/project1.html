@@ -52,6 +52,7 @@
                 </div>
               </nav>
               <div class="white-box">
+                <br>
                 <button id="navigateButton" class="btn btn-outline-success" style="margin-left: -500px;">
                   Back to Project List
                 </button>
@@ -61,31 +62,44 @@
                     };
                 </script>
                 <br> <br>
-                <b>Overview:</b> Developing Sales Insights for a Consumer Goods Company Based out of India using SQL and Power BI.<br><br>
+                <b>Overview:</b> Developing Sales Insights for a Consumer Goods Company Based out of India using SQL and Power BI.<br><br> <hr>
+                
                 <b>Problem:</b> AltiQ Hardware is facing challenges in effectively tracking sales and obtaining 
                 key business insights. The company's Sales Director, Bob, currently relies on verbal communication with regional 
                 managers in the North, South, and Central regions of India to gather critical information. For instance, Bob may need details 
                 on last quarter’s sales performance or projections for growth in the next quarter. However, these discussions are 
-                informal, with no concrete data to support the insights being shared.<br><br>Bob has recently observed a decline in 
-                sales and realizes that he needs reliable, evidence-based information to address the issue. In response, he requests 
-                the regional managers to send him their sales data, and they submit multiple Excel files with thousands of rows of 
-                data. Unfortunately, Bob struggles to make sense of this overwhelming data, preventing him from understanding the 
-                current state of the business or identifying effective solutions for improving sales performance.<br><br>To address this, 
-                Bob has asked us to create a comprehensive dashboard that consolidates all relevant sales data, providing clear
+                informal, with no concrete data to support the insights being shared.
+                
+                <br><br>Bob has recently observed a decline in sales and realizes that he needs reliable, evidence-based information to 
+                address the issue. In response, he requests the regional managers to send him their sales data, and they submit multiple
+                Excel files with thousands of rows of data. Unfortunately, Bob struggles to make sense of this overwhelming data, preventing him from understanding the 
+                current state of the business or identifying effective solutions for improving sales performance.
+                
+                <br><br>To address this, Bob has asked us to create a comprehensive dashboard that consolidates all relevant sales data, providing clear
                 visualizations for better decision-making. Additionally, Bob wants automated monthly email reminders to receive timely 
-                updates on business performance and insights. <br><br>
-               <b>Purpose:</b>To unlock sales insights that are not visible before sales team for decision support and automate theme to
+                updates on business performance and insights. 
+                
+                <br><br><b>Purpose:</b>To unlock sales insights that are not visible before sales team for decision support and automate theme to
                 reduced manual time spent in data gathering. 
+                
                 <br><b>Success Criteria:</b>Dashboard(s) uncovering sales order insights with the latest data available to make accurate and informed
                 Adjustments.
                 <hr>
-                <b>STEPS:</b> <br> STEP 1: Link Power Bi to MySql Database. I did by running a data base cales Sales with 5 tables. These tables are called
+                
+                <b>STEPS:</b> 
+                
+                <br> STEP 1: Link Power Bi to MySql Database. I did by running a data base cales Sales with 5 tables. These tables are called
                 customers, date, markets, products, and transitions. To link Power Bi to Mysql I just needed to sign in to my localhost using root and my password
+                
                 <br>STEP 2: Data cleaning - to do this I transformed the data. I removed unnecessary values such as sale amount being <=0, removed any sales that 
                 were in markets outside of India, and lastly created a new column to convert all USD currencys to INR currency in a new column called normalized_sales_amount.
                 To do this last transformation I used a conditional column that said {"normalized_sales_amount", each if [currency] = "USD" or [currency] = "USD#(cr)" then[sales_amount]*75 
-                else [sales_amount])}<br> STEP 3: Data Visualization - 
+                else [sales_amount])}
+                
+                <br> STEP 3: Data Visualization - 
+                
                 DATABASE INFO: the amount of data given to us is 5 different tables. one is customers which has 38 entrys
+              
               </div>
             </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
