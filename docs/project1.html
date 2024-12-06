@@ -52,10 +52,10 @@
                 </div>
               </nav>
               <div class="white-box">
-                <b>Overview:</b> Developing Sales Insights for a Consumer Goods Company using SQL and Power BI.<br><br>
+                <b>Overview:</b> Developing Sales Insights for a Consumer Goods Company Based out of India using SQL and Power BI.<br><br>
                 <b>Problem:</b> AltiQ Hardware is facing challenges in effectively tracking sales and obtaining 
                 key business insights. The company's Sales Director, Bob, currently relies on verbal communication with regional 
-                managers in the North, South, and Central regions to gather critical information. For instance, Bob may need details 
+                managers in the North, South, and Central regions of India to gather critical information. For instance, Bob may need details 
                 on last quarter’s sales performance or projections for growth in the next quarter. However, these discussions are 
                 informal, with no concrete data to support the insights being shared.<br><br>Bob has recently observed a decline in 
                 sales and realizes that he needs reliable, evidence-based information to address the issue. In response, he requests 
@@ -66,19 +66,19 @@
                 visualizations for better decision-making. Additionally, Bob wants automated monthly email reminders to receive timely 
                 updates on business performance and insights. <br><br>
                 <b>Project Planning:</b>  Using an AIMS Grid we break up our project into 4 categories: Purpose, Stakeholder, End Result, 
-                and Success Criteria. Under the <b>Purpose</b> section we have: To unlock sales insights that are not visible before sales
-                team for decision support and automate theme to reduced manual time spent in data gathering. Under the <b>Stakeholders</b> 
-                section we have: Sales Director, Marketing Team, Customer Service Team, Data Analytics Team, and IT. Under the <b>End Result</b>
-                section we have: an automated dashboard providing quick and latest sales insights in order to support data driven decision making. 
-                Lastly under the <b>Success Criteria</b> section we have: Dashboard(s) uncovering sales order insights with the latest data available
-                Sales team able to make better decisions and prove 10% cost savings of total spend. Salse analust stop sata gathering manually in
-                order to save 20% of their business time and reinvest in value added activity.  
-                Notes: I am pulling data from a MySql Database into Power Bi to show this data
-                STEPS: Data cleaning first, Getting rid of data that is not useful or accurate.
+                and Success Criteria. <br><br><b>Purpose:</b> section we have: To unlock sales insights that are not visible before sales
+                team for decision support and automate theme to reduced manual time spent in data gathering. <br><b>Stakeholders:</b> 
+                section we have: Sales Director, Marketing Team, Customer Service Team, Data Analytics Team, and IT. <br><b>End Result:</b>
+                an automated dashboard providing quick and latest sales insights in order to support data driven decision making. 
+                <br><b>Success Criteria:</b>Dashboard(s) uncovering sales order insights with the latest data available to make accurate and informed
+                Adjustments. <br><br>
+                <b>STEPS:</b> <br> STEP 1: Link Power Bi to MySql Database. I did by running a data base cales Sales with 5 tables. These tables are called
+                customers, date, markets, products, and transitions. To link Power Bi to Mysql I just needed to sign in to my localhost using root and my password
+                <br>STEP 2: Data cleaning - to do this I transformed the data. I removed unnecessary values such as sale amount being <=0, removed any sales that 
+                were in markets outside of India, and lastly created a new column to convert all USD currencys to INR currency in a new column called normalized_sales_amount.
+                To do this last transformation I used a conditional column that said {"normalized_sales_amount", each if [currency] = "USD" or [currency] = "USD#(cr)" then[sales_amount]*75 
+                else [sales_amount])}<br> STEP 3: Data Visualization - 
                 DATABASE INFO: the amount of data given to us is 5 different tables. one is customers which has 38 entrys
-                the next is Transactions which has 150,283 entrys
-                Vocab: Online transaction processing (OLTP) is a type of database system that processes and stores data from transactions in real time<br>
-                ETL stands for "extract, transform, and load"<br>
               </div>
             </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
