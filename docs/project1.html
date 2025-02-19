@@ -105,12 +105,12 @@
                 I connected Power BI to the database using localhost credentials (root and password) to ensure seamless data integration.
                 
                 <br><b>STEP 2: </b> Data Cleaning and Transformation - Next, I focused on cleaning the data to ensure its accuracy and relevance. This included:
-                <ul>
-                  <li>Removing rows where the sales amount was less than or equal to zero.</li>
-                  <li>Filtering out sales transactions outside of India.</li>
-                  <li>Creating a new column called normalized_sales_amount to convert all USD-based sales figures into INR using a conditional formula: <br>
-                  normalized_sales_amount = IF([currency] = "USD" OR [currency] = "USD#(cr)", [sales_amount] * 75, [sales_amount]) </li>
-                </ul>
+              
+                  Removing rows where the sales amount was less than or equal to zero.</li>
+                  Filtering out sales transactions outside of India.</li>
+                  Creating a new column called normalized_sales_amount to convert all USD-based sales figures into INR using a conditional formula: <br>
+                  <b>normalized_sales_amount = IF([currency] = "USD" OR [currency] = "USD#(cr)", [sales_amount] * 75, [sales_amount])</b>
+                
 
                 <br> <b>STEP 3: </b> Data Visualization and Dashboard Creation - To provide meaningful insights, I designed an interactive dashboard using Power BI:
                 <ul>
