@@ -102,7 +102,7 @@
                 
                 <br> <b>STEP 1: </b> Integrating Power BI with MySQL - The first step involved linking Power BI to the MySQL database.
                 I created a database called Sales, which consists of five key tables: customers, date, markets, products, and transactions. 
-                I connected Power BI to the database using localhost credentials (root and password) to ensure seamless data integration.
+                I connected Power BI to the database using localhost credentials (root and password) to ensure seamless data integration.<br>
                 
                 <br><b>STEP 2: </b> Data Cleaning and Transformation - Next, I focused on cleaning the data to ensure its accuracy and relevance. This included:
               
@@ -110,30 +110,29 @@
                   Filtering out sales transactions outside of India.</li>
                   Creating a new column called normalized_sales_amount to convert all USD-based sales figures into INR using a conditional formula: <br>
                   <b>normalized_sales_amount = IF([currency] = "USD" OR [currency] = "USD#(cr)", [sales_amount] * 75, [sales_amount])</b>
-                
+                <br>
 
                 <br> <b>STEP 3: </b> Data Visualization and Dashboard Creation - To provide meaningful insights, I designed an interactive dashboard using Power BI:
-                <ul>
-                  <li>I created a new table called businessMeasures to calculate key metrics, such as revenue and sales quantity.</li>
-                  <li>The revenue was calculated using the formula:
-                    Revenue = SUM('sales transactions'[sales_amount])</li>
-                  <li>Sales quantity was calculated using the formula:
-                    SalesQuantity = SUM('sales transactions'[sales_qty])</li>
-                  </li>
-                </ul>  
+                
+                  I created a new table called businessMeasures to calculate key metrics, such as revenue and sales quantity.
+                  The revenue was calculated using the formula:
+                    Revenue = SUM('sales transactions'[sales_amount])
+                  Sales quantity was calculated using the formula:
+                    SalesQuantity = SUM('sales transactions'[sales_qty])
+                  
                 <br>
                     I then created visual components to display these metrics, including:
-                  <ul>
-                    <li>Revenue and Sales Quantity cards.</li>
-                    <li>Four horizontal bar charts displaying:
-                      <ul>
-                        <li>Revenue by market</li>
-                        <li>Sales quantity by market</li>
-                        <li>Top 5 products by revenue</li>
-                        <li>Top 5 customers by revenue</li>
-                      </ul>
-                    <li>A line chart showing the revenue trend over time.
-                  </ul>
+                  <br>
+                    Revenue and Sales Quantity cards.
+                    Four horizontal bar charts displaying:
+                      
+                        Revenue by market
+                        Sales quantity by market
+                        Top 5 products by revenue
+                        Top 5 customers by revenue
+                      
+                    A line chart showing the revenue trend over time.
+                  
                 Additionally, to meet the requirement of filtering by year and month, I created two interactive sliders (one for the year and one for the month)
                  that allow users to drill down into specific time periods. 
                 
