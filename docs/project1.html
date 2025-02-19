@@ -74,51 +74,72 @@
                     };
                 </script>
                 <br> <br>
-                <h1>Project 1 - Sales Insights - MySQL and Power Bi</h1>
-                <b>Overview:</b> Developing Sales Insights for a Consumer Goods Company Based out of India using SQL and Power BI.<br><br> <hr>
+                <h1>Project 1 - Sales Insights: Leveraging MySQL and Power BI</h1>
                 
-                <b>Problem:</b> AltiQ Hardware is facing challenges in effectively tracking sales and obtaining 
-                key business insights. The company's Sales Director, Bob, currently relies on verbal communication with regional 
-                managers in the North, South, and Central regions of India to gather critical information. For instance, Bob may need details 
-                on last quarter’s sales performance or projections for growth in the next quarter. However, these discussions are 
-                informal, with no concrete data to support the insights being shared.
+                <hr>
+                <b>Problem:</b>
                 
-                <br><br>Bob has recently observed a decline in sales and realizes that he needs reliable, evidence-based information to 
-                address the issue. In response, he requests the regional managers to send him their sales data, and they submit multiple
-                Excel files with thousands of rows of data. Unfortunately, Bob struggles to make sense of this overwhelming data, preventing him from understanding the 
-                current state of the business or identifying effective solutions for improving sales performance.
+                <br><br>AltiQ Hardware has faced challenges in effectively tracking and analyzing sales performance. The Sales Director, Bob, currently
+                 relies on informal communication with regional managers across India to gather critical business insights. Unfortunately, these interactions 
+                 lack concrete data and often rely on verbal reports, leading to inconsistencies and limited visibility into actual performance.
                 
-                <br><br>To address this, Bob has asked us to create a comprehensive dashboard that consolidates all relevant sales data, providing clear
-                visualizations for better decision-making. This dashboard needs to present annual revenue, sales quantity, revenue by market, sales quantity
-                by market, Revenue trend, top five products and top 5 customers by revenue, and lastly you should be able to filter all of these charts by year 
-                and month. Additionally, Bob wants automated monthly email reminders to receive timely 
-                updates on business performance and insights. 
+                <br><br>When Bob observed a decline in sales, he recognized the need for reliable, data-driven insights. He requested sales data from the regional managers, 
+                who submitted numerous Excel files containing thousands of rows of data. 
+                Bob struggled to analyze this overwhelming information, making it difficult to understand the root causes of the decline or identify improvement opportunities.
                 
-                <br><br><b>Purpose:</b>To unlock sales insights that are not visible before sales team for decision support and automate theme to
-                reduced manual time spent in data gathering. 
+                <br><br> To address these challenges, Bob has asked us to build a centralized dashboard that consolidates sales data, providing visualizations to support 
+                effective decision-making. The dashboard will highlight key metrics, including annual revenue, sales volume, market-specific performance,
+                 top-performing products, and customers. Additionally, Bob requires automated monthly email reports to keep him updated on business performance and trends.
+
+                <br><br><b>Purpose:</b>The goal of this project is to uncover hidden sales insights, reduce manual effort in data gathering, and enable data-driven decision-making 
+                through an interactive and automated dashboard.
                 
-                <br><b>Success Criteria:</b>Dashboard(s) uncovering sales order insights with the latest data available to make accurate and informed
-                Adjustments.
+                <br><b>Success Criteria:</b> The project will be deemed successful when the dashboard provides clear and up-to-date sales insights, allowing the Sales Director and 
+                team to make informed adjustments to sales strategies and improve performance.
                 <hr>
                 
-                <b>STEPS:</b> 
+                <b>Project Steps:</b> 
                 
-                <br> <b>STEP 1: </b>Link Power Bi to MySql Database. I did by running a data base cales Sales with 5 tables. These tables are called
-                customers, date, markets, products, and transitions. To link Power Bi to Mysql I just needed to sign in to my localhost using root and my password
+                <br> <b>STEP 1: </b> Integrating Power BI with MySQL - The first step involved linking Power BI to the MySQL database.
+                I created a database called Sales, which consists of five key tables: customers, date, markets, products, and transactions. 
+                I connected Power BI to the database using localhost credentials (root and password) to ensure seamless data integration.
                 
-                <br><b>STEP 2: </b>Data cleaning - to do this I transformed the data. I removed unnecessary values such as sale amount being <=0, removed any sales that 
-                were in markets outside of India, and lastly created a new column to convert all USD currencys to INR currency in a new column called normalized_sales_amount.
-                To do this last transformation I used a conditional column that said {"normalized_sales_amount", each if [currency] = "USD" or [currency] = "USD#(cr)" then[sales_amount]*75 
-                else [sales_amount])}
+                <br><b>STEP 2: </b> Data Cleaning and Transformation - Next, I focused on cleaning the data to ensure its accuracy and relevance. This included:
+                <ul>
+                  <li>Removing rows where the sales amount was less than or equal to zero.</li>
+                  <li>Filtering out sales transactions outside of India.</li>
+                  <li>Creating a new column called normalized_sales_amount to convert all USD-based sales figures into INR using a conditional formula: <br>
+                  normalized_sales_amount = IF([currency] = "USD" OR [currency] = "USD#(cr)", [sales_amount] * 75, [sales_amount]) </li>
+                </ul>
+
+                <br> <b>STEP 3: </b> Data Visualization and Dashboard Creation - To provide meaningful insights, I designed an interactive dashboard using Power BI:
+                <ul>
+                  <li>I created a new table called businessMeasures to calculate key metrics, such as revenue and sales quantity.</li>
+                  <li>The revenue was calculated using the formula:
+                    Revenue = SUM('sales transactions'[sales_amount])</li>
+                  <li>Sales quantity was calculated using the formula:
+                    SalesQuantity = SUM('sales transactions'[sales_qty])</li>
+                  </li>
+                </ul>  
+                <br>
+                    I then created visual components to display these metrics, including:
+                  <ul>
+                    <li>Revenue and Sales Quantity cards.</li>
+                    <li>Four horizontal bar charts displaying:
+                      <ul>
+                        <li>Revenue by market</li>
+                        <li>Sales quantity by market</li>
+                        <li>Top 5 products by revenue</li>
+                        <li>Top 5 customers by revenue</li>
+                      </ul>
+                    <li>A line chart showing the revenue trend over time.
+                  </ul>
+                Additionally, to meet the requirement of filtering by year and month, I created two interactive sliders (one for the year and one for the month)
+                 that allow users to drill down into specific time periods. 
                 
-                <br> <b>STEP 3: </b>Data Visualization - to create this dashboard I created a new table called buisMeasures. This table was used to calculate the revenue, by 
-                creating a new measurement for revenue by using this formula : <b>"Revenue = SUM('sales transactions'[sales_amount])"</b>, then I created another measurement to
-                caluclate Sales Quantity and this was done using this formula : <b>"SalesQuantity = SUM('sales transactions'[sales_qty])"</b>. Once these measurements were created I 
-                I connected both of these two their own cards to present revenue and sales quantity. Then I four horizontal bar graphs, to show Revenue by Market, sales Quanity by market, 
-                top 5 products by revenue, and top 5 customers by revenue. The last chart I used was a line chart to display revenue over time aka revenue trend. The Last requirement was
-                to make this dashboard conditional by month and year to see the specifics by year and/or month. To do this I created 2 sliders, one for year and one for month, and I changed the 
-                style of the slider to title to make it look nicer.
-                <br> <hr>
+                 <br> <b>STEP 4:</b> Automation - Lastly, I implemented an automated monthly email reminder feature to provide Bob with timely updates on sales 
+                 performance and insights, reducing the need for manual data retrieval.
+                 <br> <hr>
 
                 <b>Pictures of Dashboard</b><br> <br>
                 <div class="container">
